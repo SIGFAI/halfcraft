@@ -1,0 +1,91 @@
+//-----------------------------------------------------------------------------
+//	HALFCRAFT_CLIENT.VPC
+//
+//	halfcraft's code in client.dll. included from game\client\client_hl2.vpc of
+//	both sdk trees (source\sdk\halfcraft-<engine>.patch), which set
+//	$HALFCRAFTROOT to the repo: the trees sit at different depths below it.
+//-----------------------------------------------------------------------------
+
+$Macro HALFCRAFTDIR		"$HALFCRAFTROOT\source"
+$Macro HALFCRAFTPROTO	"$HALFCRAFTROOT\protocol"
+
+$Configuration
+{
+	$Compiler
+	{
+		$AdditionalIncludeDirectories	"$BASE;$HALFCRAFTDIR\src;$HALFCRAFTPROTO"
+		$AdditionalOptions				"$BASE /std:c++17"
+	}
+}
+
+$Project
+{
+	$Folder	"Source Files"
+	{
+		$Folder	"HalfCraft"
+		{
+			$File	"$HALFCRAFTDIR\src\shared\hc_hooks.h"
+			$File	"$HALFCRAFTDIR\src\shared\hc_bridge.h"
+			$File	"$HALFCRAFTDIR\src\shared\hc_movement.cpp"
+			$File	"$HALFCRAFTDIR\src\shared\hc_weapon_ids.h"
+			$File	"$HALFCRAFTDIR\src\shared\hc_floors.h"
+			$File	"$HALFCRAFTDIR\src\shared\hc_floors.cpp"
+			$File	"$HALFCRAFTDIR\src\client\hc_blocks.h"
+			$File	"$HALFCRAFTDIR\src\client\hc_blocks.cpp"
+			$File	"$HALFCRAFTDIR\src\client\hc_campaign_text.cpp"
+			$File	"$HALFCRAFTDIR\src\client\hc_client.h"
+			$File	"$HALFCRAFTDIR\src\client\hc_client.cpp"
+			$File	"$HALFCRAFTDIR\src\client\hc_console_input.cpp"
+			$File	"$HALFCRAFTDIR\src\client\hc_input.cpp"
+			$File	"$HALFCRAFTDIR\src\client\hc_jumps.h"
+			$File	"$HALFCRAFTDIR\src\client\hc_jumps.cpp"
+			$File	"$HALFCRAFTDIR\src\client\hc_minecraft.cpp"
+			$File	"$HALFCRAFTDIR\src\client\hc_overlay.cpp"
+			$File	"$HALFCRAFTDIR\src\client\hc_screenshot.cpp"
+			$File	"$HALFCRAFTDIR\src\client\hc_light.h"
+			$File	"$HALFCRAFTDIR\src\client\hc_light.cpp"
+			$File	"$HALFCRAFTDIR\src\client\hc_mesh.h"
+			$File	"$HALFCRAFTDIR\src\client\hc_mesh.cpp"
+			$File	"$HALFCRAFTDIR\src\client\hc_texture.h"
+			$File	"$HALFCRAFTDIR\src\client\hc_texture.cpp"
+			$File	"$HALFCRAFTDIR\src\client\hc_things.h"
+			$File	"$HALFCRAFTDIR\src\client\hc_things.cpp"
+			$File	"$HALFCRAFTDIR\src\client\hc_block_lights.h"
+			$File	"$HALFCRAFTDIR\src\client\hc_block_lights.cpp"
+			$File	"$HALFCRAFTDIR\src\client\hc_debug.h"
+			$File	"$HALFCRAFTDIR\src\client\hc_debug.cpp"
+			$File	"$HALFCRAFTDIR\src\client\hc_water.cpp"
+			$File	"$HALFCRAFTDIR\src\client\hc_weapons.h"
+			$File	"$HALFCRAFTDIR\src\client\hc_weapons.cpp"
+
+			$Folder	"Core"
+			{
+				$File	"$HALFCRAFTPROTO\halfcraft_protocol.h"
+				$File	"$HALFCRAFTDIR\src\core\hc_atomic.h"
+				$File	"$HALFCRAFTDIR\src\core\hc_campaign.h"
+				$File	"$HALFCRAFTDIR\src\core\hc_grid.h"
+				$File	"$HALFCRAFTDIR\src\core\hc_link.h"
+				$File	"$HALFCRAFTDIR\src\core\hc_log.h"
+				$File	"$HALFCRAFTDIR\src\core\hc_prism.h"
+				$File	"$HALFCRAFTDIR\src\core\hc_text.h"
+				$File	"$HALFCRAFTDIR\src\core\hc_ticks.h"
+				$File	"$HALFCRAFTDIR\src\core\hc_units.h"
+				$File	"$HALFCRAFTDIR\src\core\hc_chapters.h"
+				$File	"$HALFCRAFTDIR\src\core\hc_link.cpp" \
+						"$HALFCRAFTDIR\src\core\hc_log.cpp" \
+						"$HALFCRAFTDIR\src\core\hc_prism.cpp" \
+						"$HALFCRAFTDIR\src\core\hc_ticks.cpp" \
+						"$HALFCRAFTDIR\src\core\hc_units.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+			}
+		}
+	}
+}
