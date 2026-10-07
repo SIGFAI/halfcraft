@@ -1,0 +1,1051 @@
+{
+  "id": "sigf/halfcraft",
+  "version": "0.1.0",
+  "name": "HalfCraft",
+  "tagline": "Play Half-Life 2 as a Minecraft player: build on its maps, fight the Combine with a diamond sword, light City 17 with torches.",
+  "how_to_play": [
+    "Half-Life 2, both episodes and Lost Coast as one campaign, but you move, build and fight as Steve with Minecraft's physics, hotbar and inventory.",
+    "Press Play: Minecraft waits on its title screen, then hides and opens its mirror world by itself once Half-Life 2 is up. Start a new game as usual.",
+    "Half-Life's weapons become hotbar items: hold one to take it out, mouse buttons fire and alt-fire, R reloads. G is use (pick up props), V the flashlight.",
+    "Place and break blocks on Half-Life's maps; NPCs and physics props bump into what you build. Loading a save rolls Minecraft back with it."
+  ],
+  "kind": "passthrough",
+  "games": [
+    {
+      "game": "halflife2",
+      "role": "host",
+      "label": "Half-Life 2",
+      "engine": "Source (2013 SDK, 32-bit hl2.exe) + HalfCraft mod (client.dll/server.dll, mod_episodic, C++)",
+      "apps": {
+        "steam": "220"
+      },
+      "runtime": "current Steam build (the mod ships its own game DLLs; HL2, both episodes and Lost Coast mounted from the Steam install)"
+    },
+    {
+      "game": "minecraft",
+      "role": "guest",
+      "label": "Minecraft",
+      "engine": "Minecraft Java 26.3 + Fabric mod halfcraft (Java)",
+      "mc": "26.3",
+      "loader": "fabric@0.19.5",
+      "java": "25"
+    }
+  ],
+  "requires": [
+    {
+      "id": "fabric-loader",
+      "version": "0.19.5"
+    },
+    {
+      "id": "fabric-api",
+      "version": "0.161.0+26.3",
+      "note": "in the Minecraft pack (downloaded from Modrinth)"
+    }
+  ],
+  "install": [
+    {
+      "game": "halflife2",
+      "strategy": "profile",
+      "files": [
+        {
+          "src": "halfcraft-hl2.zip",
+          "dst": "{app}/game-hl2",
+          "unpack": true,
+          "contents": [
+            {
+              "path": "bin/client.dll",
+              "sha256": "dbb0b7ef818f020cfa47607945f83ee08964920eb75a7689aea3d06e3dec95d5"
+            },
+            {
+              "path": "bin/server.dll",
+              "sha256": "f7d38465ec4c543a15ca21149aa71d606969bb32d76c6416fac3bf2e99bf8ece"
+            },
+            {
+              "path": "cfg/chapter1.cfg",
+              "sha256": "5291a8f5b77c0f6e3c4bda5cc9332d3cc8db3e910519efe89c3b316331007ef3"
+            },
+            {
+              "path": "cfg/chapter10.cfg",
+              "sha256": "2f460a955e4c0516809ceb3bf10f43dd834a4c82edecf6cd127f43b57d44d15a"
+            },
+            {
+              "path": "cfg/chapter11.cfg",
+              "sha256": "144ff7c5541c4df951eb8102bb5dbb3cabeeeeb671ad4d7e47d3138ad24ae9fc"
+            },
+            {
+              "path": "cfg/chapter12.cfg",
+              "sha256": "81c09ca4dab72e432a415ddc0903c3ad3f7737136a7a42072c3bc66d4a5f432b"
+            },
+            {
+              "path": "cfg/chapter13.cfg",
+              "sha256": "ac3dcbdf2316e40877d5d88631231494246d1a32e771461ba8c683052da43e8d"
+            },
+            {
+              "path": "cfg/chapter14.cfg",
+              "sha256": "93fe46d1ea89a7fdd4363ab8c43498a4e389eeae6502a2a350c381e3de2edc29"
+            },
+            {
+              "path": "cfg/chapter15.cfg",
+              "sha256": "63ff2b83ff4e36776b890198e06a3ae51be6dfe691369ca3556d8eb9ded0af93"
+            },
+            {
+              "path": "cfg/chapter16.cfg",
+              "sha256": "320744b66a2935ae97a6c0aa6451a0a3b486ee2f30d1f34b0ff13c6c225e8d6c"
+            },
+            {
+              "path": "cfg/chapter17.cfg",
+              "sha256": "f5942cf45dfc96be9a5a4f9ba8db7b21a935daae77891434aaf3ac0e79544f07"
+            },
+            {
+              "path": "cfg/chapter18.cfg",
+              "sha256": "bef52207c2ab2663e383cb4bb59024b3a8fb6df331953f4e7ec04a69d7fc3b3c"
+            },
+            {
+              "path": "cfg/chapter19.cfg",
+              "sha256": "4b97de15705778e295e9d2debff672f7beacf983c1977594a3ec69c03157d6bd"
+            },
+            {
+              "path": "cfg/chapter2.cfg",
+              "sha256": "98a3d1017ff011ca92fe70848eeb294c59eacd95588bcef3f0a269c07914b56a"
+            },
+            {
+              "path": "cfg/chapter20.cfg",
+              "sha256": "502d4d0e3c2f9d8f1ce0e5837324c5f3896a14f897a0c11075dc33785261b724"
+            },
+            {
+              "path": "cfg/chapter21.cfg",
+              "sha256": "052ab789381b8da15a2273213d58db2715e73fe3273b3cc56a61f25b44123c92"
+            },
+            {
+              "path": "cfg/chapter22.cfg",
+              "sha256": "9bd7f1b265645765441cb7f0d194f2e01af0ebc0c85be8f8bced6428a3fcd72a"
+            },
+            {
+              "path": "cfg/chapter23.cfg",
+              "sha256": "c54439da210b3ac6af5ea7f52b4ae4fef78a2a00cd3323a2498fba8f082794f5"
+            },
+            {
+              "path": "cfg/chapter24.cfg",
+              "sha256": "f9fd8207e8c5fd3f07a4e2e61dff3647b8086c55e909aeab915ad382706e4c3f"
+            },
+            {
+              "path": "cfg/chapter25.cfg",
+              "sha256": "5e03571ef2f26af47dfd3b2f76d1dfc1310c8d2aace415c52c29648fb6f9a621"
+            },
+            {
+              "path": "cfg/chapter26.cfg",
+              "sha256": "00d51ce26e99011743c373ce5cb506dc830518263883202e89d57e5af7c77a83"
+            },
+            {
+              "path": "cfg/chapter27.cfg",
+              "sha256": "2e8d28eb514e389b96fcf4094ea2f63f07e5b039760b6d2daaf49e7d8b156f16"
+            },
+            {
+              "path": "cfg/chapter3.cfg",
+              "sha256": "353788e76b173edc580f05b59664839e27be53fedf55c98b637e79f314b8a766"
+            },
+            {
+              "path": "cfg/chapter4.cfg",
+              "sha256": "3a7d871e641eb2ddf8ec973907e265fc4f207c3d5a57ffc2b4651de29ce78804"
+            },
+            {
+              "path": "cfg/chapter5.cfg",
+              "sha256": "8b570e5a9bdf554b1b894a7d4419ea405c539309f58fb2553a692af744613342"
+            },
+            {
+              "path": "cfg/chapter6.cfg",
+              "sha256": "6f6a86d69ea82e4cde58a8d4ee1a46846778ef9e0709cc4c953dbf2b8fcd3c18"
+            },
+            {
+              "path": "cfg/chapter7.cfg",
+              "sha256": "5f47aa8b20e4b20669affb517f2aaf7a601d73ce0cfd06122033787cf537f0ff"
+            },
+            {
+              "path": "cfg/chapter8.cfg",
+              "sha256": "039830637475f13c8d0a6659e3835a0de746ca5afbf0f8ec60f26e2b6eff420b"
+            },
+            {
+              "path": "cfg/chapter9.cfg",
+              "sha256": "51dc120f9b6b50aaf9439b39bda21823bbde4aee53b69203f030ec41909a96e0"
+            },
+            {
+              "path": "cfg/chapter9a.cfg",
+              "sha256": "33ed22099dce049f87181f94a81651437ac646c20325e2b63a5a9f351d67ee26"
+            },
+            {
+              "path": "cfg/config_default.cfg",
+              "sha256": "d574fd2f6ad656a5fbcd61f9e91161131756e3fc0b5727bec75f9f39ef07b2e4"
+            },
+            {
+              "path": "cfg/skill_ep1.cfg",
+              "sha256": "8058ce1d0a94eedd57eb94c8a61fb62ce7811ee06629db8c2463a93c1860af72"
+            },
+            {
+              "path": "cfg/skill_ep2.cfg",
+              "sha256": "a2000fc69ce75341a8786ec46057831fedd251fee8ea4f43a2b9b9db370b97da"
+            },
+            {
+              "path": "cfg/skill_manifest.cfg",
+              "sha256": "58d29eade5b887aa6b3f9243799559aaabd116c84035f3cc1783ea63bc202778"
+            },
+            {
+              "path": "cfg/skill.cfg",
+              "sha256": "4a0c3409fa9f07c3c19525b0ccf00e23f5e3f8901f4186e10a497a35f4821147"
+            },
+            {
+              "path": "cfg/valve.rc",
+              "sha256": "69e6343bbc2303c91b00fc50571dd927e433401d13468c8e43232fb879e95510"
+            },
+            {
+              "path": "gameinfo.txt",
+              "sha256": "19f9561b011d5b3d27d12d39c13a4308bf6b78b47ca51fb6912d50562369a1d1"
+            },
+            {
+              "path": "halfcraft-files.txt",
+              "sha256": "4001f344e7bcd07e09c6306c95174ee58a253b67830b2a38c1ba625832e0aea3"
+            },
+            {
+              "path": "halfcraft-licenses/LICENSE.txt",
+              "sha256": "172d24d253aba793d7da35f3eb81e190c4e19e3711c4f183af7d150b86cb16f8"
+            },
+            {
+              "path": "halfcraft-licenses/SourceSDK2013-LICENSE.txt",
+              "sha256": "224f468d7358f94a09d42f6d783e146b498468322c2ac2ff3b9180eb3ba3ce6f"
+            },
+            {
+              "path": "halfcraft-licenses/THIRD-PARTY-NOTICES.md",
+              "sha256": "66e9113155948dd0d2c0f58cf3e6a2b96e942e68ce2f18ec5b863b5a2cb95b4b"
+            },
+            {
+              "path": "maps/credits_commentary.txt",
+              "sha256": "ec4a4850dc70ac7bb718a3a37aea3d6aaecae3ed5868925067860b49d970c7bd"
+            },
+            {
+              "path": "maps/d1_canals_01_commentary.txt",
+              "sha256": "5372358ada049f294432f4823719c4a4b07af8d9d594014e0d212c302a8b3d7b"
+            },
+            {
+              "path": "maps/d1_canals_01a_commentary.txt",
+              "sha256": "c150e8933aca741253dafa115fda4620a52ced5e20ea72e29f0ad84146ed0cb4"
+            },
+            {
+              "path": "maps/d1_canals_02_commentary.txt",
+              "sha256": "534f2351b76cfa775f92f574573fb62338cd3a59f2c9e5b529eb49c66b11d108"
+            },
+            {
+              "path": "maps/d1_canals_03_commentary.txt",
+              "sha256": "d103c905981c511c7d0c35a413cdd6711c222bf5e31de35fd38a25fe99598c81"
+            },
+            {
+              "path": "maps/d1_canals_05_commentary.txt",
+              "sha256": "988f2a27013af1db4e58f7cc4c065892746c57c32d5ad53366c1b294e9687108"
+            },
+            {
+              "path": "maps/d1_canals_06_commentary.txt",
+              "sha256": "03507728dcac01ebadb20afe80863eb9ca3c8dce927d702f5585d2ea4e3aa616"
+            },
+            {
+              "path": "maps/d1_canals_07_commentary.txt",
+              "sha256": "1d70604a27cf0616499fd99d15f9d43e871c406e300d29e8477c54bc28bbae32"
+            },
+            {
+              "path": "maps/d1_canals_08_commentary.txt",
+              "sha256": "55c121797726a122097370e5147e35c17be681504643dfa30de340b15ed0cee5"
+            },
+            {
+              "path": "maps/d1_canals_09_commentary.txt",
+              "sha256": "b84ea3cddbc2c0060eb2844c9c1db1c54181c1a88a5f9d667e1d54ff1ab3ca7f"
+            },
+            {
+              "path": "maps/d1_canals_10_commentary.txt",
+              "sha256": "4283599db47f88e931c901d371890d5898bd0210b13f3d8cbd4e43a2b2d04b83"
+            },
+            {
+              "path": "maps/d1_canals_11_commentary.txt",
+              "sha256": "a5ff144680e10a948c33681d728a2748c86d803b2581f96235754a3ccc1e8857"
+            },
+            {
+              "path": "maps/d1_canals_12_commentary.txt",
+              "sha256": "2062f3aeadeedc236ac85da2bb08f52ac8a72744fe781adf6e8334a66c8607e1"
+            },
+            {
+              "path": "maps/d1_canals_13_commentary.txt",
+              "sha256": "2d93d92de95e4e313b8649fdacc90aacbe2407adbf244c744ca74030ffb22882"
+            },
+            {
+              "path": "maps/d1_eli_01_commentary.txt",
+              "sha256": "cc1875a4517adfb6d00a6d2265c7bce6d914988a8fe3285b499a508cfbc50ebe"
+            },
+            {
+              "path": "maps/d1_eli_02_commentary.txt",
+              "sha256": "7cb62272c1c559c3a80718c4fff2fef3bb6ea5c51c0201af0c6e1d579c8316e7"
+            },
+            {
+              "path": "maps/d1_town_01_commentary.txt",
+              "sha256": "5f1923ea9f7bd3b6fbba3f7a173b2baa96dcb6ce4a1735d6e24915e59d4d2580"
+            },
+            {
+              "path": "maps/d1_town_01a_commentary.txt",
+              "sha256": "2c08fa05cc3124a68e8959ba8884ceb12dc8ab4bf9ac7eaddb4800db8efe3e61"
+            },
+            {
+              "path": "maps/d1_town_02_commentary.txt",
+              "sha256": "3dd3c7add4262e216d5879995657297ab7394189fd12468aac3976b279745f1a"
+            },
+            {
+              "path": "maps/d1_town_02a_commentary.txt",
+              "sha256": "0848a3dd8bae605d01e962cb09bea175fb618f0dc345fdd255d6587da523ee2d"
+            },
+            {
+              "path": "maps/d1_town_03_commentary.txt",
+              "sha256": "bb335afd5d0076f471836d2b5efa6307b93086646dfa4a0a94589eb0d77ff38c"
+            },
+            {
+              "path": "maps/d1_town_04_commentary.txt",
+              "sha256": "933c9f52f25c2cb439b6b9d954d045cfc32056cfa26223e18e4c9a4442306b3e"
+            },
+            {
+              "path": "maps/d1_town_05_commentary.txt",
+              "sha256": "0582016936ecaed2c12f981c97dc3d7bc1d4f5e5f87773776044815a1450f15f"
+            },
+            {
+              "path": "maps/d1_trainstation_01_commentary.txt",
+              "sha256": "35afa67754d3d39aaf77b140fde218dc7b9ddedf6cef06e491cf0ce41bfcc036"
+            },
+            {
+              "path": "maps/d1_trainstation_02_commentary.txt",
+              "sha256": "5f20953d59b1f8ad95feb5b4bf1a39d57913e18cacde239f0b0a3a31f9ec881b"
+            },
+            {
+              "path": "maps/d1_trainstation_03_commentary.txt",
+              "sha256": "957403415d23e608161cf074cca26462000746b423eac3bf2595fd337b01c590"
+            },
+            {
+              "path": "maps/d1_trainstation_04_commentary.txt",
+              "sha256": "01b8fb7d032802f9d8db6834ea6a61786ef880a9850007ae29fcde86bb44de9c"
+            },
+            {
+              "path": "maps/d1_trainstation_05_commentary.txt",
+              "sha256": "79bc2dacd8454daebb8ceb51c278d9107cbb4f7025426ab26fad7961d0fe4de2"
+            },
+            {
+              "path": "maps/d1_trainstation_06_commentary.txt",
+              "sha256": "12b222ed57314cb2fb0daedb963ffc3159b621bd48bfa8a9770a9244776cef80"
+            },
+            {
+              "path": "maps/d2_coast_01_commentary.txt",
+              "sha256": "aca7924b52b723386fafb7b655b078d4a78b6a129b392b327608610bcaf39969"
+            },
+            {
+              "path": "maps/d2_coast_03_commentary.txt",
+              "sha256": "41bc1744417358111a0cc943f9bb1be250e51b71ef1bc5698b39d76b352d96a5"
+            },
+            {
+              "path": "maps/d2_coast_04_commentary.txt",
+              "sha256": "e592b6e439b8b18d6f5218243285788bb723065d48eab0bbf0a28d5d2abdfa49"
+            },
+            {
+              "path": "maps/d2_coast_05_commentary.txt",
+              "sha256": "a80232be8e0f3989a8b303ba9f43cdfc2c874ea93787458be4854b613ef03b5d"
+            },
+            {
+              "path": "maps/d2_coast_07_commentary.txt",
+              "sha256": "4310c93c8f882acb84b85a944fd83ac78dd82934cf0586abad7b45ac62affd9c"
+            },
+            {
+              "path": "maps/d2_coast_08_commentary.txt",
+              "sha256": "9fdfcc8b5d59e516bf8f3ef8a0074a89e05f21238937323739c683d1b84e6d55"
+            },
+            {
+              "path": "maps/d2_coast_09_commentary.txt",
+              "sha256": "eb955306f90ce3d41cba0bf20746f8f07eec9dcd36b923e8d6571c052d9f87ae"
+            },
+            {
+              "path": "maps/d2_coast_10_commentary.txt",
+              "sha256": "9c62932bb9ec8491f4b80bf658fbffe153fe9b16b5f3752d2698ab3c62f05fce"
+            },
+            {
+              "path": "maps/d2_coast_11_commentary.txt",
+              "sha256": "947adc92236539488af27a4a98018c0f0bf5f4a0aa934bbe5df7dafff9cd9f97"
+            },
+            {
+              "path": "maps/d2_coast_12_commentary.txt",
+              "sha256": "51317152046848134493f9048a903b5c4e3500d8209eb93ae334a9dbc93179df"
+            },
+            {
+              "path": "maps/d2_lostcoast_commentary.txt",
+              "sha256": "4458baf07442908722c608ea3980d8d3eb772b456b9b0022b72595b5ed986434"
+            },
+            {
+              "path": "maps/d2_prison_01_commentary.txt",
+              "sha256": "14ce5907351f202585caa797cd2d34733986e12951c1032c139cec1910836e64"
+            },
+            {
+              "path": "maps/d2_prison_02_commentary.txt",
+              "sha256": "0a50cedf9aa8b5bfe93a6eb66584d12a052593d3a16163c12bc1b76d73c55d2b"
+            },
+            {
+              "path": "maps/d2_prison_03_commentary.txt",
+              "sha256": "bc975229086271537907ba3e7797133b7c64316e8e490e0d89a7c60a65dec2ab"
+            },
+            {
+              "path": "maps/d2_prison_04_commentary.txt",
+              "sha256": "c5f221b43d1a60a2ed4532fa8a5d3e1ae1a2fc539b56fee315c7848ed511ea62"
+            },
+            {
+              "path": "maps/d2_prison_05_commentary.txt",
+              "sha256": "1c2c9021c638edaad142336d8afad02fbfebcd11945e765b4dc007db57217dbb"
+            },
+            {
+              "path": "maps/d2_prison_06_commentary.txt",
+              "sha256": "33c66285e2d1371ac18dda5196be3324fdec0d7c4966a817bc88204d7f1b9528"
+            },
+            {
+              "path": "maps/d2_prison_07_commentary.txt",
+              "sha256": "f486a33ace8e53e19baf2281229a87520610e19b53a5c7dcb5022acd3624e48b"
+            },
+            {
+              "path": "maps/d2_prison_08_commentary.txt",
+              "sha256": "485e346f8152e5f4459c4e578ee2fed1336d635b3ea9d5f7b9645ae0815b69d6"
+            },
+            {
+              "path": "maps/d3_breen_01_commentary.txt",
+              "sha256": "7e18941b26f5a32516ea4c035c7ac3f690ed06748b5a353246a88ebc952751f0"
+            },
+            {
+              "path": "maps/d3_c17_01_commentary.txt",
+              "sha256": "ec4a4850dc70ac7bb718a3a37aea3d6aaecae3ed5868925067860b49d970c7bd"
+            },
+            {
+              "path": "maps/d3_c17_02_commentary.txt",
+              "sha256": "a9d841734c674aeb1443054a66264071d75f9e715a071a3b58c392b1d1c55d9f"
+            },
+            {
+              "path": "maps/d3_c17_03_commentary.txt",
+              "sha256": "791ca4930e06d536d988dc41069728ec34825c87fe6b0f049d76249767d002fd"
+            },
+            {
+              "path": "maps/d3_c17_04_commentary.txt",
+              "sha256": "6e5b839ead3cb95eea756ee3da7d5b5bcd1232161f996f00bc7f4496f86d2c81"
+            },
+            {
+              "path": "maps/d3_c17_05_commentary.txt",
+              "sha256": "e8fb2b55bda33e23f7821921d10bb04cbfaf9f6251f8c35fb1358fe03c73a786"
+            },
+            {
+              "path": "maps/d3_c17_06a_commentary.txt",
+              "sha256": "5baade9dce534578b28a5348a80a721de6d41eae09e56cc2a0a062a2e145c02a"
+            },
+            {
+              "path": "maps/d3_c17_06b_commentary.txt",
+              "sha256": "a3c234ebbc90fd0ed88b44c6c9b5ac0d8d5a9e97cacd5815813d59dd21f505b1"
+            },
+            {
+              "path": "maps/d3_c17_07_commentary.txt",
+              "sha256": "a8e3f6d27dc0d5195fbc8606fdd01c6750eb2a20c0ff028e2749939ce93f7b62"
+            },
+            {
+              "path": "maps/d3_c17_08_commentary.txt",
+              "sha256": "91e10e62d302430e1facedd2050c77591a6cbdbe2e689eb1e5919dafae0a4713"
+            },
+            {
+              "path": "maps/d3_c17_09_commentary.txt",
+              "sha256": "439f40aa7e833d52a9342300f82df5c443bb114c6d012f62e7ad7bd8ead36716"
+            },
+            {
+              "path": "maps/d3_c17_10a_commentary.txt",
+              "sha256": "ec4a4850dc70ac7bb718a3a37aea3d6aaecae3ed5868925067860b49d970c7bd"
+            },
+            {
+              "path": "maps/d3_c17_10b_commentary.txt",
+              "sha256": "ec4a4850dc70ac7bb718a3a37aea3d6aaecae3ed5868925067860b49d970c7bd"
+            },
+            {
+              "path": "maps/d3_c17_11_commentary.txt",
+              "sha256": "0c2a835cff450777fc3478158b2b647716db8651fb398be16fb60d756364df6a"
+            },
+            {
+              "path": "maps/d3_c17_12_commentary.txt",
+              "sha256": "9fd8ba85f86842e2d43ef95dd4fd81fcd0ef12b5b1e670bdf13e79c041f96e24"
+            },
+            {
+              "path": "maps/d3_c17_12b_commentary.txt",
+              "sha256": "ec4a4850dc70ac7bb718a3a37aea3d6aaecae3ed5868925067860b49d970c7bd"
+            },
+            {
+              "path": "maps/d3_c17_13_commentary.txt",
+              "sha256": "ec4a4850dc70ac7bb718a3a37aea3d6aaecae3ed5868925067860b49d970c7bd"
+            },
+            {
+              "path": "maps/d3_citadel_01_commentary.txt",
+              "sha256": "a6829bfdee75798cd6ec96432855aee9362043c54ab918c351be72247153f7f2"
+            },
+            {
+              "path": "maps/d3_citadel_02_commentary.txt",
+              "sha256": "ec4a4850dc70ac7bb718a3a37aea3d6aaecae3ed5868925067860b49d970c7bd"
+            },
+            {
+              "path": "maps/d3_citadel_03_commentary.txt",
+              "sha256": "943db169cb3b451507f20bb00671dcac39792a7bd4ce042094f294375f10dfa6"
+            },
+            {
+              "path": "maps/d3_citadel_04_commentary.txt",
+              "sha256": "a8dafec3f7f9f3c5a79e1429ba271e8ce125c756e6217a3bf79966fd6baa9837"
+            },
+            {
+              "path": "maps/d3_citadel_05_commentary.txt",
+              "sha256": "1b6a79667fe60272881bef81046fe21b6aed94e8203b3b8922b11560e876f0de"
+            },
+            {
+              "path": "maps/ep1_c17_00_commentary.txt",
+              "sha256": "27805b886e42748a22cef1213bfe69a7724bec88824c20d0b66fdd872321aadf"
+            },
+            {
+              "path": "maps/ep1_c17_00a_commentary.txt",
+              "sha256": "77e396758adb00bd208cb6d79a850205e1f8332230953185837e5810ee0067e7"
+            },
+            {
+              "path": "maps/ep1_c17_01_commentary.txt",
+              "sha256": "b9a6dd0e490a5981f484fe199e403977a2368e8351590fbe56ed7d8dcfda6a46"
+            },
+            {
+              "path": "maps/ep1_c17_01a_commentary.txt",
+              "sha256": "f69f915db986fae0ccf240e41fa6f19ac8f773dd97000eb606e29f4fc1bcb3e4"
+            },
+            {
+              "path": "maps/ep1_c17_02_commentary.txt",
+              "sha256": "6dc7f960db136086ae6d235bae12436d31b0ccde889b7a071adcb0d1da1b6d4c"
+            },
+            {
+              "path": "maps/ep1_c17_02a_commentary.txt",
+              "sha256": "b69adacd628810623f15f7f542d76e38c58ef9d689cf1fb7cb774592689ff78a"
+            },
+            {
+              "path": "maps/ep1_c17_02b_commentary.txt",
+              "sha256": "3600189c8b2f480362d844695204e270bfb51442ea2f7fbf1210ef209751295e"
+            },
+            {
+              "path": "maps/ep1_c17_05_commentary.txt",
+              "sha256": "d7ff5bc01fa51c548d084cc4068f7b22e9562d347a9e0aaa974aded6143ea089"
+            },
+            {
+              "path": "maps/ep1_c17_06_commentary.txt",
+              "sha256": "57d4da606dba9702ffe8043902633d0c88150e277765029db8fe6c65b05f10ff"
+            },
+            {
+              "path": "maps/ep1_citadel_00_commentary.txt",
+              "sha256": "f626c96f5d23c318b0c8051839222dc508aa9fed7ebf4161e92ea36159630548"
+            },
+            {
+              "path": "maps/ep1_citadel_01_commentary.txt",
+              "sha256": "4157101e338b12c79b6354948da7200dda77190a37ff814a20e8e567d1f394e9"
+            },
+            {
+              "path": "maps/ep1_citadel_02_commentary.txt",
+              "sha256": "0f53901212ab23ec7c8a91d14a25640648c22009b643959aed8a7c5e1c1ba407"
+            },
+            {
+              "path": "maps/ep1_citadel_02b_commentary.txt",
+              "sha256": "55935dae176c9eaf7734e4b6e5a9c8ceb0ca71671b7a414b0e321343aff411ce"
+            },
+            {
+              "path": "maps/ep1_citadel_03_commentary.txt",
+              "sha256": "14a8b0ed93862c8b81eac676a4546d216732e1082504b971c97d9db177953ca7"
+            },
+            {
+              "path": "maps/ep1_citadel_04_commentary.txt",
+              "sha256": "014a1894744308717b4a4528baf778e8cb3e3d936d27b6993fc7c1f8d0b7f864"
+            },
+            {
+              "path": "maps/ep2_outland_01_commentary.txt",
+              "sha256": "43727036f117f8d0ffd166b01ab11c8a78754a4d9d07548d549f2bc328d92372"
+            },
+            {
+              "path": "maps/ep2_outland_01a_commentary.txt",
+              "sha256": "507a7a5fc0e8cb7347b3666cf686c81e5a995df60297d930aca99f7be44956bb"
+            },
+            {
+              "path": "maps/ep2_outland_02_commentary.txt",
+              "sha256": "e259de099c4bb3059349ca6210aa54fc2c01d07ee728285cc4513ade920c7b64"
+            },
+            {
+              "path": "maps/ep2_outland_03_commentary.txt",
+              "sha256": "d08a631aa9d5665a883f5a4eb5f6d8ae57bd541c3abd0d3d90a3c57cbc0a7a11"
+            },
+            {
+              "path": "maps/ep2_outland_04_commentary.txt",
+              "sha256": "c858133b9ea5182dcc62174cdcaebe1f2a5fcb7358be51f211b3241b851dd833"
+            },
+            {
+              "path": "maps/ep2_outland_05_commentary.txt",
+              "sha256": "7af8d9d7723bb51b242522d2d782ffa3d0276601c84850bdb86b36d79b24ac95"
+            },
+            {
+              "path": "maps/ep2_outland_06_commentary.txt",
+              "sha256": "b6a6dccdb7e6043b9a30cda3e09547bbb9268177d0e9c14660930a6f010f2896"
+            },
+            {
+              "path": "maps/ep2_outland_06a_commentary.txt",
+              "sha256": "f68c9e977d3b5215851c3932c570dfea48e95d442b99df682cddd471720b96c4"
+            },
+            {
+              "path": "maps/ep2_outland_07_commentary.txt",
+              "sha256": "183bffd501271295e7be946127248c6e99235528386150547016dee6802642d4"
+            },
+            {
+              "path": "maps/ep2_outland_08_commentary.txt",
+              "sha256": "1c31d872175f9e0521d394e6ca23dd2df5a08731ae17c5b7e75c04ad8e82ddd1"
+            },
+            {
+              "path": "maps/ep2_outland_09_commentary.txt",
+              "sha256": "1171357d217f83e23b85b2be9e759434e2d16d428343128ec361aadc8aa0141f"
+            },
+            {
+              "path": "maps/ep2_outland_10_commentary.txt",
+              "sha256": "27304f97bce3498c7a906ef7e79cfdf7f20ce09c0cca9ee0cc7df0cafe361611"
+            },
+            {
+              "path": "maps/ep2_outland_10a_commentary.txt",
+              "sha256": "eac80439a0c76a68408b33ca41d822bd242d58d2b354b669c0e25f889828b7d6"
+            },
+            {
+              "path": "maps/ep2_outland_11_commentary.txt",
+              "sha256": "fa50f7ff15abf90949ec9f01ef49c3be832d2969413a71c4297f497da734f743"
+            },
+            {
+              "path": "maps/ep2_outland_11a_commentary.txt",
+              "sha256": "dc291ab89d84b490651df8fac37baf23c8582a7030f680f7d0644aff2477efea"
+            },
+            {
+              "path": "maps/ep2_outland_11b_commentary.txt",
+              "sha256": "0d8e9b8d827b62d7263ea1a48f655efc2f05b357c323f0146c6e468ed9f8f353"
+            },
+            {
+              "path": "maps/ep2_outland_12_commentary.txt",
+              "sha256": "b9679045c5ca07c7264ad25931193be25cff9855e7e33c2941be9763b023f386"
+            },
+            {
+              "path": "maps/ep2_outland_12a_commentary.txt",
+              "sha256": "4fd36e4083fc8d17312f116db9525e4c108ec72a4c1d0a41ddc5ca2e4f39df1d"
+            },
+            {
+              "path": "maps/intro_commentary.txt",
+              "sha256": "ec4a4850dc70ac7bb718a3a37aea3d6aaecae3ed5868925067860b49d970c7bd"
+            },
+            {
+              "path": "maps/unplaced_commentary.txt",
+              "sha256": "802b93e256ed895d21ed9655a2c92284ac033524819718c42f3436f2daa6f49b"
+            },
+            {
+              "path": "materials/vgui/chapters/chapter1.vmt",
+              "sha256": "b01c71f834d7dd200ed89228130821465e148d03dfab83853bdd152038073f0b"
+            },
+            {
+              "path": "materials/vgui/chapters/chapter10.vmt",
+              "sha256": "ed6892e5969ccfd4a837ada1805f886b0dfd0c21cac08fd88611d046faa1af01"
+            },
+            {
+              "path": "materials/vgui/chapters/chapter11.vmt",
+              "sha256": "085a52e3e40bf5b9b69bc53c6846b642309cb5c30b422979b35fc60ed5f0e091"
+            },
+            {
+              "path": "materials/vgui/chapters/chapter12.vmt",
+              "sha256": "e7dc47e84cc8edaaf875a89dc7badbf63174bc10be251944b1081e5f1848612c"
+            },
+            {
+              "path": "materials/vgui/chapters/chapter13.vmt",
+              "sha256": "6ab9c2e4a17961734457e4cc8f30f3c5f39472a1bcdf026e6d978f8b689cf9fe"
+            },
+            {
+              "path": "materials/vgui/chapters/chapter14.vmt",
+              "sha256": "c6e0b2709307de6a92575cb96fcf1f6022f3823892ecbc9cca2ceb7853d2f47d"
+            },
+            {
+              "path": "materials/vgui/chapters/chapter15.vmt",
+              "sha256": "1a0a78beb7bf90302431a37f54f3c6241ec5233cd6a05575df1d60d95f9aa956"
+            },
+            {
+              "path": "materials/vgui/chapters/chapter16.vmt",
+              "sha256": "aaa4d63c657ffa27f84ed33c6aa07901ff7aa3cbfffe75c4fd19e4ce0cdaf3a7"
+            },
+            {
+              "path": "materials/vgui/chapters/chapter17.vmt",
+              "sha256": "fd98113af8c22b59e94ef644cac508a315aa94c14fdfa5d46ccff4516f81d4c7"
+            },
+            {
+              "path": "materials/vgui/chapters/chapter18.vmt",
+              "sha256": "291ee00cc5a99c456c18a9daa5d554578d84f078be2a244bf66d29bf6542a575"
+            },
+            {
+              "path": "materials/vgui/chapters/chapter19.vmt",
+              "sha256": "fd8a2227520ce93a90653395129a58fae8378785834c1892f56ff5619b353cf8"
+            },
+            {
+              "path": "materials/vgui/chapters/chapter2.vmt",
+              "sha256": "fdcf25b442f22d8d219175875b3a007b7c805dccbf0073bc28aded7acdf93a43"
+            },
+            {
+              "path": "materials/vgui/chapters/chapter20.vmt",
+              "sha256": "d7fd23febb6048b211b087dc16178387e80eb0d639c07494557b47d3b12fa7a6"
+            },
+            {
+              "path": "materials/vgui/chapters/chapter21.vmt",
+              "sha256": "af2de491b4b3c5e14da417fd47cca51d19154d2bf0fc274951acaec9c2354f5e"
+            },
+            {
+              "path": "materials/vgui/chapters/chapter22.vmt",
+              "sha256": "46edcc7ffd6838512a9c0707bb1dfabe4d3c160e2742efb8d72ca30ade41fffb"
+            },
+            {
+              "path": "materials/vgui/chapters/chapter23.vmt",
+              "sha256": "8b48de4f0bd4e4d1ab918bea77a6dab868844e41a80fb824083b170606462b7f"
+            },
+            {
+              "path": "materials/vgui/chapters/chapter24.vmt",
+              "sha256": "248e358f81ff6a5b4f3c8823a3a25b521f9a0be5f346e9ea2ddae4f2e5f7295d"
+            },
+            {
+              "path": "materials/vgui/chapters/chapter25.vmt",
+              "sha256": "479c049ab411eb3dde7a9f544cade76b914155992975e1ca43960b2c26fda8b0"
+            },
+            {
+              "path": "materials/vgui/chapters/chapter26.vmt",
+              "sha256": "82ebb3c01a88ed2d57299108ffa482f237e7c3fee2620cef99655682f8cf627a"
+            },
+            {
+              "path": "materials/vgui/chapters/chapter27.vmt",
+              "sha256": "eb9c9ff990f6333755b581988fb38fc3fbf95b2964c055cd09ec59403728a139"
+            },
+            {
+              "path": "materials/vgui/chapters/chapter3.vmt",
+              "sha256": "2e20c6c3486562d399f21310138226ce41b9762b89bf39bc46409d94e3bae715"
+            },
+            {
+              "path": "materials/vgui/chapters/chapter4.vmt",
+              "sha256": "a71d3fc7a898527663cbf16ab79af81ef2568bbe74e8fd896b6d593a17d24314"
+            },
+            {
+              "path": "materials/vgui/chapters/chapter5.vmt",
+              "sha256": "f593f2135c421b4bf76a7293d7c331dcdfcf3e2207d5e4b0f164249908e67728"
+            },
+            {
+              "path": "materials/vgui/chapters/chapter6.vmt",
+              "sha256": "da99c5eee5623e31f7bb708103b62b4f510e6ffde7f7fc18c13b4b49cd7f55f3"
+            },
+            {
+              "path": "materials/vgui/chapters/chapter7.vmt",
+              "sha256": "0e3336fcd2a5b807f2a4cf2906ac8c6b7da99d533ec8803a55411fa07b663c6f"
+            },
+            {
+              "path": "materials/vgui/chapters/chapter8.vmt",
+              "sha256": "838e66fe94273b75f7ac9d39eaca1b9a5842fc2fda4474b41dfba6c311949737"
+            },
+            {
+              "path": "materials/vgui/chapters/chapter9.vmt",
+              "sha256": "37d1d543251de8922332cdfea40445cbf0aa180f606c0fd1715f29588293117f"
+            },
+            {
+              "path": "materials/vgui/chapters/chapter9a.vmt",
+              "sha256": "65d92dd7070c7100cd363dd4e3970bef7d0972953f234461a048d9d5d2c71bf1"
+            },
+            {
+              "path": "resource/game-hl2_english.txt",
+              "sha256": "d2a9d0150ee5cbdf25551d1afdc03fa8798f81b5dc27175599660572af8ef8c9"
+            },
+            {
+              "path": "resource/HL2EP2.ttf",
+              "sha256": "79cf3ebbfa1f8e0d5140b2ab237f6ba02c5c9b88b7422ce2069beefe6f9a9194"
+            },
+            {
+              "path": "scripts/credits.txt",
+              "sha256": "9ba2a12b6ac2c1438a4ef158384e1bfdd7f077230e0b7ec17b9f458f08f913cd"
+            },
+            {
+              "path": "scripts/game_sounds_manifest.txt",
+              "sha256": "dec6f28b554d0845335ac9ca6e5fc16f131c0e3612b80c631e8220282a1cad68"
+            },
+            {
+              "path": "scripts/hud_textures.txt",
+              "sha256": "b8e23ece6b4d28c24fc95f9442d7b8bcce0f1ac9f6e3db2128c45884e9b32630"
+            },
+            {
+              "path": "scripts/HudLayout.res",
+              "sha256": "9478de3732da9124383d3379408922afa7379ba35243e7b8452b7ec1ca38e163"
+            },
+            {
+              "path": "scripts/talker/response_rules.txt",
+              "sha256": "48449c731b920baec62c7057acb521a2dcfb041a83c42001838447cb7a96104f"
+            },
+            {
+              "path": "shaders/fxc/flashlight_ps20b.vcs",
+              "sha256": "f1d5f5bd619288535d39516d756adcf7b372a1fca0988a94213caf8b8a27fe7f"
+            },
+            {
+              "path": "shaders/fxc/lightmappedgeneric_flashlight_vs20.vcs",
+              "sha256": "f0e0f950bc5acc250e40dde586aa28ba3be173992bbe094572abf4e365fc5387"
+            }
+          ],
+          "url": "https://github.com/SIGFAI/halfcraft/releases/download/v0.1.0/halfcraft-hl2.zip",
+          "sha256": "9053889de41537c7a9a16878ab0aa803f787a2dc76ae3f3ca1f03277c31d885f",
+          "size": 5956178
+        }
+      ]
+    },
+    {
+      "game": "minecraft",
+      "strategy": "mrpack",
+      "jvm_args": [
+        "-Dhalfcraft.startHidden=true"
+      ],
+      "pack": {
+        "src": "halfcraft.mrpack",
+        "url": "https://github.com/SIGFAI/halfcraft/releases/download/v0.1.0/halfcraft.mrpack",
+        "sha256": "f75c8145607ba074151aa9fc39bf2c4df347446680768703b78bb3641a5367f4",
+        "size": 306708
+      }
+    }
+  ],
+  "launch": [
+    {
+      "game": "minecraft"
+    },
+    {
+      "game": "halflife2",
+      "exe": "hl2.exe",
+      "args": [
+        "-game",
+        "{app}/game-hl2",
+        "-novid"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "name": "halfcraft-hl2.zip",
+      "url": "https://github.com/SIGFAI/halfcraft/releases/download/v0.1.0/halfcraft-hl2.zip",
+      "sha256": "9053889de41537c7a9a16878ab0aa803f787a2dc76ae3f3ca1f03277c31d885f",
+      "size": 5956178
+    },
+    {
+      "name": "halfcraft.mrpack",
+      "url": "https://github.com/SIGFAI/halfcraft/releases/download/v0.1.0/halfcraft.mrpack",
+      "sha256": "f75c8145607ba074151aa9fc39bf2c4df347446680768703b78bb3641a5367f4",
+      "size": 306708
+    }
+  ],
+  "source": {
+    "repo": "https://github.com/whiskydumb/halfcraft",
+    "license": "MIT AND LicenseRef-Source-1-SDK",
+    "upstream_license": "MIT",
+    "commit": "1567b0be95f37912d376b788dd495d965b20b8d9",
+    "hosted": "https://github.com/SIGFAI/halfcraft",
+    "based_on": "https://github.com/chasmlol/SkyCraft",
+    "built": {
+      "by": "SIGF",
+      "commit": "1567b0be95f37912d376b788dd495d965b20b8d9",
+      "builder": "AWS EC2 i-0ce16aee59cfee816 (c6i.2xlarge, Windows Server 2022, eu-west-1 default VPC, no inbound, SSM only; terminated after the build); VS 2022 Build Tools MSVC 14.44.35207 (v143, CL/_LINK_=/Brepro), JDK Temurin 25 + Gradle 9.7.1 wrapper",
+      "artifacts": {
+        "game-hl2/bin/client.dll": "dbb0b7ef818f020cfa47607945f83ee08964920eb75a7689aea3d06e3dec95d5",
+        "game-hl2/bin/server.dll": "f7d38465ec4c543a15ca21149aa71d606969bb32d76c6416fac3bf2e99bf8ece",
+        "game-hl2/cfg/chapter1.cfg": "5291a8f5b77c0f6e3c4bda5cc9332d3cc8db3e910519efe89c3b316331007ef3",
+        "game-hl2/cfg/chapter10.cfg": "2f460a955e4c0516809ceb3bf10f43dd834a4c82edecf6cd127f43b57d44d15a",
+        "game-hl2/cfg/chapter11.cfg": "144ff7c5541c4df951eb8102bb5dbb3cabeeeeb671ad4d7e47d3138ad24ae9fc",
+        "game-hl2/cfg/chapter12.cfg": "81c09ca4dab72e432a415ddc0903c3ad3f7737136a7a42072c3bc66d4a5f432b",
+        "game-hl2/cfg/chapter13.cfg": "ac3dcbdf2316e40877d5d88631231494246d1a32e771461ba8c683052da43e8d",
+        "game-hl2/cfg/chapter14.cfg": "93fe46d1ea89a7fdd4363ab8c43498a4e389eeae6502a2a350c381e3de2edc29",
+        "game-hl2/cfg/chapter15.cfg": "63ff2b83ff4e36776b890198e06a3ae51be6dfe691369ca3556d8eb9ded0af93",
+        "game-hl2/cfg/chapter16.cfg": "320744b66a2935ae97a6c0aa6451a0a3b486ee2f30d1f34b0ff13c6c225e8d6c",
+        "game-hl2/cfg/chapter17.cfg": "f5942cf45dfc96be9a5a4f9ba8db7b21a935daae77891434aaf3ac0e79544f07",
+        "game-hl2/cfg/chapter18.cfg": "bef52207c2ab2663e383cb4bb59024b3a8fb6df331953f4e7ec04a69d7fc3b3c",
+        "game-hl2/cfg/chapter19.cfg": "4b97de15705778e295e9d2debff672f7beacf983c1977594a3ec69c03157d6bd",
+        "game-hl2/cfg/chapter2.cfg": "98a3d1017ff011ca92fe70848eeb294c59eacd95588bcef3f0a269c07914b56a",
+        "game-hl2/cfg/chapter20.cfg": "502d4d0e3c2f9d8f1ce0e5837324c5f3896a14f897a0c11075dc33785261b724",
+        "game-hl2/cfg/chapter21.cfg": "052ab789381b8da15a2273213d58db2715e73fe3273b3cc56a61f25b44123c92",
+        "game-hl2/cfg/chapter22.cfg": "9bd7f1b265645765441cb7f0d194f2e01af0ebc0c85be8f8bced6428a3fcd72a",
+        "game-hl2/cfg/chapter23.cfg": "c54439da210b3ac6af5ea7f52b4ae4fef78a2a00cd3323a2498fba8f082794f5",
+        "game-hl2/cfg/chapter24.cfg": "f9fd8207e8c5fd3f07a4e2e61dff3647b8086c55e909aeab915ad382706e4c3f",
+        "game-hl2/cfg/chapter25.cfg": "5e03571ef2f26af47dfd3b2f76d1dfc1310c8d2aace415c52c29648fb6f9a621",
+        "game-hl2/cfg/chapter26.cfg": "00d51ce26e99011743c373ce5cb506dc830518263883202e89d57e5af7c77a83",
+        "game-hl2/cfg/chapter27.cfg": "2e8d28eb514e389b96fcf4094ea2f63f07e5b039760b6d2daaf49e7d8b156f16",
+        "game-hl2/cfg/chapter3.cfg": "353788e76b173edc580f05b59664839e27be53fedf55c98b637e79f314b8a766",
+        "game-hl2/cfg/chapter4.cfg": "3a7d871e641eb2ddf8ec973907e265fc4f207c3d5a57ffc2b4651de29ce78804",
+        "game-hl2/cfg/chapter5.cfg": "8b570e5a9bdf554b1b894a7d4419ea405c539309f58fb2553a692af744613342",
+        "game-hl2/cfg/chapter6.cfg": "6f6a86d69ea82e4cde58a8d4ee1a46846778ef9e0709cc4c953dbf2b8fcd3c18",
+        "game-hl2/cfg/chapter7.cfg": "5f47aa8b20e4b20669affb517f2aaf7a601d73ce0cfd06122033787cf537f0ff",
+        "game-hl2/cfg/chapter8.cfg": "039830637475f13c8d0a6659e3835a0de746ca5afbf0f8ec60f26e2b6eff420b",
+        "game-hl2/cfg/chapter9.cfg": "51dc120f9b6b50aaf9439b39bda21823bbde4aee53b69203f030ec41909a96e0",
+        "game-hl2/cfg/chapter9a.cfg": "33ed22099dce049f87181f94a81651437ac646c20325e2b63a5a9f351d67ee26",
+        "game-hl2/cfg/config_default.cfg": "d574fd2f6ad656a5fbcd61f9e91161131756e3fc0b5727bec75f9f39ef07b2e4",
+        "game-hl2/cfg/skill_ep1.cfg": "8058ce1d0a94eedd57eb94c8a61fb62ce7811ee06629db8c2463a93c1860af72",
+        "game-hl2/cfg/skill_ep2.cfg": "a2000fc69ce75341a8786ec46057831fedd251fee8ea4f43a2b9b9db370b97da",
+        "game-hl2/cfg/skill_manifest.cfg": "58d29eade5b887aa6b3f9243799559aaabd116c84035f3cc1783ea63bc202778",
+        "game-hl2/cfg/skill.cfg": "4a0c3409fa9f07c3c19525b0ccf00e23f5e3f8901f4186e10a497a35f4821147",
+        "game-hl2/cfg/valve.rc": "69e6343bbc2303c91b00fc50571dd927e433401d13468c8e43232fb879e95510",
+        "game-hl2/gameinfo.txt": "19f9561b011d5b3d27d12d39c13a4308bf6b78b47ca51fb6912d50562369a1d1",
+        "game-hl2/halfcraft-files.txt": "4001f344e7bcd07e09c6306c95174ee58a253b67830b2a38c1ba625832e0aea3",
+        "game-hl2/maps/credits_commentary.txt": "ec4a4850dc70ac7bb718a3a37aea3d6aaecae3ed5868925067860b49d970c7bd",
+        "game-hl2/maps/d1_canals_01_commentary.txt": "5372358ada049f294432f4823719c4a4b07af8d9d594014e0d212c302a8b3d7b",
+        "game-hl2/maps/d1_canals_01a_commentary.txt": "c150e8933aca741253dafa115fda4620a52ced5e20ea72e29f0ad84146ed0cb4",
+        "game-hl2/maps/d1_canals_02_commentary.txt": "534f2351b76cfa775f92f574573fb62338cd3a59f2c9e5b529eb49c66b11d108",
+        "game-hl2/maps/d1_canals_03_commentary.txt": "d103c905981c511c7d0c35a413cdd6711c222bf5e31de35fd38a25fe99598c81",
+        "game-hl2/maps/d1_canals_05_commentary.txt": "988f2a27013af1db4e58f7cc4c065892746c57c32d5ad53366c1b294e9687108",
+        "game-hl2/maps/d1_canals_06_commentary.txt": "03507728dcac01ebadb20afe80863eb9ca3c8dce927d702f5585d2ea4e3aa616",
+        "game-hl2/maps/d1_canals_07_commentary.txt": "1d70604a27cf0616499fd99d15f9d43e871c406e300d29e8477c54bc28bbae32",
+        "game-hl2/maps/d1_canals_08_commentary.txt": "55c121797726a122097370e5147e35c17be681504643dfa30de340b15ed0cee5",
+        "game-hl2/maps/d1_canals_09_commentary.txt": "b84ea3cddbc2c0060eb2844c9c1db1c54181c1a88a5f9d667e1d54ff1ab3ca7f",
+        "game-hl2/maps/d1_canals_10_commentary.txt": "4283599db47f88e931c901d371890d5898bd0210b13f3d8cbd4e43a2b2d04b83",
+        "game-hl2/maps/d1_canals_11_commentary.txt": "a5ff144680e10a948c33681d728a2748c86d803b2581f96235754a3ccc1e8857",
+        "game-hl2/maps/d1_canals_12_commentary.txt": "2062f3aeadeedc236ac85da2bb08f52ac8a72744fe781adf6e8334a66c8607e1",
+        "game-hl2/maps/d1_canals_13_commentary.txt": "2d93d92de95e4e313b8649fdacc90aacbe2407adbf244c744ca74030ffb22882",
+        "game-hl2/maps/d1_eli_01_commentary.txt": "cc1875a4517adfb6d00a6d2265c7bce6d914988a8fe3285b499a508cfbc50ebe",
+        "game-hl2/maps/d1_eli_02_commentary.txt": "7cb62272c1c559c3a80718c4fff2fef3bb6ea5c51c0201af0c6e1d579c8316e7",
+        "game-hl2/maps/d1_town_01_commentary.txt": "5f1923ea9f7bd3b6fbba3f7a173b2baa96dcb6ce4a1735d6e24915e59d4d2580",
+        "game-hl2/maps/d1_town_01a_commentary.txt": "2c08fa05cc3124a68e8959ba8884ceb12dc8ab4bf9ac7eaddb4800db8efe3e61",
+        "game-hl2/maps/d1_town_02_commentary.txt": "3dd3c7add4262e216d5879995657297ab7394189fd12468aac3976b279745f1a",
+        "game-hl2/maps/d1_town_02a_commentary.txt": "0848a3dd8bae605d01e962cb09bea175fb618f0dc345fdd255d6587da523ee2d",
+        "game-hl2/maps/d1_town_03_commentary.txt": "bb335afd5d0076f471836d2b5efa6307b93086646dfa4a0a94589eb0d77ff38c",
+        "game-hl2/maps/d1_town_04_commentary.txt": "933c9f52f25c2cb439b6b9d954d045cfc32056cfa26223e18e4c9a4442306b3e",
+        "game-hl2/maps/d1_town_05_commentary.txt": "0582016936ecaed2c12f981c97dc3d7bc1d4f5e5f87773776044815a1450f15f",
+        "game-hl2/maps/d1_trainstation_01_commentary.txt": "35afa67754d3d39aaf77b140fde218dc7b9ddedf6cef06e491cf0ce41bfcc036",
+        "game-hl2/maps/d1_trainstation_02_commentary.txt": "5f20953d59b1f8ad95feb5b4bf1a39d57913e18cacde239f0b0a3a31f9ec881b",
+        "game-hl2/maps/d1_trainstation_03_commentary.txt": "957403415d23e608161cf074cca26462000746b423eac3bf2595fd337b01c590",
+        "game-hl2/maps/d1_trainstation_04_commentary.txt": "01b8fb7d032802f9d8db6834ea6a61786ef880a9850007ae29fcde86bb44de9c",
+        "game-hl2/maps/d1_trainstation_05_commentary.txt": "79bc2dacd8454daebb8ceb51c278d9107cbb4f7025426ab26fad7961d0fe4de2",
+        "game-hl2/maps/d1_trainstation_06_commentary.txt": "12b222ed57314cb2fb0daedb963ffc3159b621bd48bfa8a9770a9244776cef80",
+        "game-hl2/maps/d2_coast_01_commentary.txt": "aca7924b52b723386fafb7b655b078d4a78b6a129b392b327608610bcaf39969",
+        "game-hl2/maps/d2_coast_03_commentary.txt": "41bc1744417358111a0cc943f9bb1be250e51b71ef1bc5698b39d76b352d96a5",
+        "game-hl2/maps/d2_coast_04_commentary.txt": "e592b6e439b8b18d6f5218243285788bb723065d48eab0bbf0a28d5d2abdfa49",
+        "game-hl2/maps/d2_coast_05_commentary.txt": "a80232be8e0f3989a8b303ba9f43cdfc2c874ea93787458be4854b613ef03b5d",
+        "game-hl2/maps/d2_coast_07_commentary.txt": "4310c93c8f882acb84b85a944fd83ac78dd82934cf0586abad7b45ac62affd9c",
+        "game-hl2/maps/d2_coast_08_commentary.txt": "9fdfcc8b5d59e516bf8f3ef8a0074a89e05f21238937323739c683d1b84e6d55",
+        "game-hl2/maps/d2_coast_09_commentary.txt": "eb955306f90ce3d41cba0bf20746f8f07eec9dcd36b923e8d6571c052d9f87ae",
+        "game-hl2/maps/d2_coast_10_commentary.txt": "9c62932bb9ec8491f4b80bf658fbffe153fe9b16b5f3752d2698ab3c62f05fce",
+        "game-hl2/maps/d2_coast_11_commentary.txt": "947adc92236539488af27a4a98018c0f0bf5f4a0aa934bbe5df7dafff9cd9f97",
+        "game-hl2/maps/d2_coast_12_commentary.txt": "51317152046848134493f9048a903b5c4e3500d8209eb93ae334a9dbc93179df",
+        "game-hl2/maps/d2_lostcoast_commentary.txt": "4458baf07442908722c608ea3980d8d3eb772b456b9b0022b72595b5ed986434",
+        "game-hl2/maps/d2_prison_01_commentary.txt": "14ce5907351f202585caa797cd2d34733986e12951c1032c139cec1910836e64",
+        "game-hl2/maps/d2_prison_02_commentary.txt": "0a50cedf9aa8b5bfe93a6eb66584d12a052593d3a16163c12bc1b76d73c55d2b",
+        "game-hl2/maps/d2_prison_03_commentary.txt": "bc975229086271537907ba3e7797133b7c64316e8e490e0d89a7c60a65dec2ab",
+        "game-hl2/maps/d2_prison_04_commentary.txt": "c5f221b43d1a60a2ed4532fa8a5d3e1ae1a2fc539b56fee315c7848ed511ea62",
+        "game-hl2/maps/d2_prison_05_commentary.txt": "1c2c9021c638edaad142336d8afad02fbfebcd11945e765b4dc007db57217dbb",
+        "game-hl2/maps/d2_prison_06_commentary.txt": "33c66285e2d1371ac18dda5196be3324fdec0d7c4966a817bc88204d7f1b9528",
+        "game-hl2/maps/d2_prison_07_commentary.txt": "f486a33ace8e53e19baf2281229a87520610e19b53a5c7dcb5022acd3624e48b",
+        "game-hl2/maps/d2_prison_08_commentary.txt": "485e346f8152e5f4459c4e578ee2fed1336d635b3ea9d5f7b9645ae0815b69d6",
+        "game-hl2/maps/d3_breen_01_commentary.txt": "7e18941b26f5a32516ea4c035c7ac3f690ed06748b5a353246a88ebc952751f0",
+        "game-hl2/maps/d3_c17_01_commentary.txt": "ec4a4850dc70ac7bb718a3a37aea3d6aaecae3ed5868925067860b49d970c7bd",
+        "game-hl2/maps/d3_c17_02_commentary.txt": "a9d841734c674aeb1443054a66264071d75f9e715a071a3b58c392b1d1c55d9f",
+        "game-hl2/maps/d3_c17_03_commentary.txt": "791ca4930e06d536d988dc41069728ec34825c87fe6b0f049d76249767d002fd",
+        "game-hl2/maps/d3_c17_04_commentary.txt": "6e5b839ead3cb95eea756ee3da7d5b5bcd1232161f996f00bc7f4496f86d2c81",
+        "game-hl2/maps/d3_c17_05_commentary.txt": "e8fb2b55bda33e23f7821921d10bb04cbfaf9f6251f8c35fb1358fe03c73a786",
+        "game-hl2/maps/d3_c17_06a_commentary.txt": "5baade9dce534578b28a5348a80a721de6d41eae09e56cc2a0a062a2e145c02a",
+        "game-hl2/maps/d3_c17_06b_commentary.txt": "a3c234ebbc90fd0ed88b44c6c9b5ac0d8d5a9e97cacd5815813d59dd21f505b1",
+        "game-hl2/maps/d3_c17_07_commentary.txt": "a8e3f6d27dc0d5195fbc8606fdd01c6750eb2a20c0ff028e2749939ce93f7b62",
+        "game-hl2/maps/d3_c17_08_commentary.txt": "91e10e62d302430e1facedd2050c77591a6cbdbe2e689eb1e5919dafae0a4713",
+        "game-hl2/maps/d3_c17_09_commentary.txt": "439f40aa7e833d52a9342300f82df5c443bb114c6d012f62e7ad7bd8ead36716",
+        "game-hl2/maps/d3_c17_10a_commentary.txt": "ec4a4850dc70ac7bb718a3a37aea3d6aaecae3ed5868925067860b49d970c7bd",
+        "game-hl2/maps/d3_c17_10b_commentary.txt": "ec4a4850dc70ac7bb718a3a37aea3d6aaecae3ed5868925067860b49d970c7bd",
+        "game-hl2/maps/d3_c17_11_commentary.txt": "0c2a835cff450777fc3478158b2b647716db8651fb398be16fb60d756364df6a",
+        "game-hl2/maps/d3_c17_12_commentary.txt": "9fd8ba85f86842e2d43ef95dd4fd81fcd0ef12b5b1e670bdf13e79c041f96e24",
+        "game-hl2/maps/d3_c17_12b_commentary.txt": "ec4a4850dc70ac7bb718a3a37aea3d6aaecae3ed5868925067860b49d970c7bd",
+        "game-hl2/maps/d3_c17_13_commentary.txt": "ec4a4850dc70ac7bb718a3a37aea3d6aaecae3ed5868925067860b49d970c7bd",
+        "game-hl2/maps/d3_citadel_01_commentary.txt": "a6829bfdee75798cd6ec96432855aee9362043c54ab918c351be72247153f7f2",
+        "game-hl2/maps/d3_citadel_02_commentary.txt": "ec4a4850dc70ac7bb718a3a37aea3d6aaecae3ed5868925067860b49d970c7bd",
+        "game-hl2/maps/d3_citadel_03_commentary.txt": "943db169cb3b451507f20bb00671dcac39792a7bd4ce042094f294375f10dfa6",
+        "game-hl2/maps/d3_citadel_04_commentary.txt": "a8dafec3f7f9f3c5a79e1429ba271e8ce125c756e6217a3bf79966fd6baa9837",
+        "game-hl2/maps/d3_citadel_05_commentary.txt": "1b6a79667fe60272881bef81046fe21b6aed94e8203b3b8922b11560e876f0de",
+        "game-hl2/maps/ep1_c17_00_commentary.txt": "27805b886e42748a22cef1213bfe69a7724bec88824c20d0b66fdd872321aadf",
+        "game-hl2/maps/ep1_c17_00a_commentary.txt": "77e396758adb00bd208cb6d79a850205e1f8332230953185837e5810ee0067e7",
+        "game-hl2/maps/ep1_c17_01_commentary.txt": "b9a6dd0e490a5981f484fe199e403977a2368e8351590fbe56ed7d8dcfda6a46",
+        "game-hl2/maps/ep1_c17_01a_commentary.txt": "f69f915db986fae0ccf240e41fa6f19ac8f773dd97000eb606e29f4fc1bcb3e4",
+        "game-hl2/maps/ep1_c17_02_commentary.txt": "6dc7f960db136086ae6d235bae12436d31b0ccde889b7a071adcb0d1da1b6d4c",
+        "game-hl2/maps/ep1_c17_02a_commentary.txt": "b69adacd628810623f15f7f542d76e38c58ef9d689cf1fb7cb774592689ff78a",
+        "game-hl2/maps/ep1_c17_02b_commentary.txt": "3600189c8b2f480362d844695204e270bfb51442ea2f7fbf1210ef209751295e",
+        "game-hl2/maps/ep1_c17_05_commentary.txt": "d7ff5bc01fa51c548d084cc4068f7b22e9562d347a9e0aaa974aded6143ea089",
+        "game-hl2/maps/ep1_c17_06_commentary.txt": "57d4da606dba9702ffe8043902633d0c88150e277765029db8fe6c65b05f10ff",
+        "game-hl2/maps/ep1_citadel_00_commentary.txt": "f626c96f5d23c318b0c8051839222dc508aa9fed7ebf4161e92ea36159630548",
+        "game-hl2/maps/ep1_citadel_01_commentary.txt": "4157101e338b12c79b6354948da7200dda77190a37ff814a20e8e567d1f394e9",
+        "game-hl2/maps/ep1_citadel_02_commentary.txt": "0f53901212ab23ec7c8a91d14a25640648c22009b643959aed8a7c5e1c1ba407",
+        "game-hl2/maps/ep1_citadel_02b_commentary.txt": "55935dae176c9eaf7734e4b6e5a9c8ceb0ca71671b7a414b0e321343aff411ce",
+        "game-hl2/maps/ep1_citadel_03_commentary.txt": "14a8b0ed93862c8b81eac676a4546d216732e1082504b971c97d9db177953ca7",
+        "game-hl2/maps/ep1_citadel_04_commentary.txt": "014a1894744308717b4a4528baf778e8cb3e3d936d27b6993fc7c1f8d0b7f864",
+        "game-hl2/maps/ep2_outland_01_commentary.txt": "43727036f117f8d0ffd166b01ab11c8a78754a4d9d07548d549f2bc328d92372",
+        "game-hl2/maps/ep2_outland_01a_commentary.txt": "507a7a5fc0e8cb7347b3666cf686c81e5a995df60297d930aca99f7be44956bb",
+        "game-hl2/maps/ep2_outland_02_commentary.txt": "e259de099c4bb3059349ca6210aa54fc2c01d07ee728285cc4513ade920c7b64",
+        "game-hl2/maps/ep2_outland_03_commentary.txt": "d08a631aa9d5665a883f5a4eb5f6d8ae57bd541c3abd0d3d90a3c57cbc0a7a11",
+        "game-hl2/maps/ep2_outland_04_commentary.txt": "c858133b9ea5182dcc62174cdcaebe1f2a5fcb7358be51f211b3241b851dd833",
+        "game-hl2/maps/ep2_outland_05_commentary.txt": "7af8d9d7723bb51b242522d2d782ffa3d0276601c84850bdb86b36d79b24ac95",
+        "game-hl2/maps/ep2_outland_06_commentary.txt": "b6a6dccdb7e6043b9a30cda3e09547bbb9268177d0e9c14660930a6f010f2896",
+        "game-hl2/maps/ep2_outland_06a_commentary.txt": "f68c9e977d3b5215851c3932c570dfea48e95d442b99df682cddd471720b96c4",
+        "game-hl2/maps/ep2_outland_07_commentary.txt": "183bffd501271295e7be946127248c6e99235528386150547016dee6802642d4",
+        "game-hl2/maps/ep2_outland_08_commentary.txt": "1c31d872175f9e0521d394e6ca23dd2df5a08731ae17c5b7e75c04ad8e82ddd1",
+        "game-hl2/maps/ep2_outland_09_commentary.txt": "1171357d217f83e23b85b2be9e759434e2d16d428343128ec361aadc8aa0141f",
+        "game-hl2/maps/ep2_outland_10_commentary.txt": "27304f97bce3498c7a906ef7e79cfdf7f20ce09c0cca9ee0cc7df0cafe361611",
+        "game-hl2/maps/ep2_outland_10a_commentary.txt": "eac80439a0c76a68408b33ca41d822bd242d58d2b354b669c0e25f889828b7d6",
+        "game-hl2/maps/ep2_outland_11_commentary.txt": "fa50f7ff15abf90949ec9f01ef49c3be832d2969413a71c4297f497da734f743",
+        "game-hl2/maps/ep2_outland_11a_commentary.txt": "dc291ab89d84b490651df8fac37baf23c8582a7030f680f7d0644aff2477efea",
+        "game-hl2/maps/ep2_outland_11b_commentary.txt": "0d8e9b8d827b62d7263ea1a48f655efc2f05b357c323f0146c6e468ed9f8f353",
+        "game-hl2/maps/ep2_outland_12_commentary.txt": "b9679045c5ca07c7264ad25931193be25cff9855e7e33c2941be9763b023f386",
+        "game-hl2/maps/ep2_outland_12a_commentary.txt": "4fd36e4083fc8d17312f116db9525e4c108ec72a4c1d0a41ddc5ca2e4f39df1d",
+        "game-hl2/maps/intro_commentary.txt": "ec4a4850dc70ac7bb718a3a37aea3d6aaecae3ed5868925067860b49d970c7bd",
+        "game-hl2/maps/unplaced_commentary.txt": "802b93e256ed895d21ed9655a2c92284ac033524819718c42f3436f2daa6f49b",
+        "game-hl2/materials/vgui/chapters/chapter1.vmt": "b01c71f834d7dd200ed89228130821465e148d03dfab83853bdd152038073f0b",
+        "game-hl2/materials/vgui/chapters/chapter10.vmt": "ed6892e5969ccfd4a837ada1805f886b0dfd0c21cac08fd88611d046faa1af01",
+        "game-hl2/materials/vgui/chapters/chapter11.vmt": "085a52e3e40bf5b9b69bc53c6846b642309cb5c30b422979b35fc60ed5f0e091",
+        "game-hl2/materials/vgui/chapters/chapter12.vmt": "e7dc47e84cc8edaaf875a89dc7badbf63174bc10be251944b1081e5f1848612c",
+        "game-hl2/materials/vgui/chapters/chapter13.vmt": "6ab9c2e4a17961734457e4cc8f30f3c5f39472a1bcdf026e6d978f8b689cf9fe",
+        "game-hl2/materials/vgui/chapters/chapter14.vmt": "c6e0b2709307de6a92575cb96fcf1f6022f3823892ecbc9cca2ceb7853d2f47d",
+        "game-hl2/materials/vgui/chapters/chapter15.vmt": "1a0a78beb7bf90302431a37f54f3c6241ec5233cd6a05575df1d60d95f9aa956",
+        "game-hl2/materials/vgui/chapters/chapter16.vmt": "aaa4d63c657ffa27f84ed33c6aa07901ff7aa3cbfffe75c4fd19e4ce0cdaf3a7",
+        "game-hl2/materials/vgui/chapters/chapter17.vmt": "fd98113af8c22b59e94ef644cac508a315aa94c14fdfa5d46ccff4516f81d4c7",
+        "game-hl2/materials/vgui/chapters/chapter18.vmt": "291ee00cc5a99c456c18a9daa5d554578d84f078be2a244bf66d29bf6542a575",
+        "game-hl2/materials/vgui/chapters/chapter19.vmt": "fd8a2227520ce93a90653395129a58fae8378785834c1892f56ff5619b353cf8",
+        "game-hl2/materials/vgui/chapters/chapter2.vmt": "fdcf25b442f22d8d219175875b3a007b7c805dccbf0073bc28aded7acdf93a43",
+        "game-hl2/materials/vgui/chapters/chapter20.vmt": "d7fd23febb6048b211b087dc16178387e80eb0d639c07494557b47d3b12fa7a6",
+        "game-hl2/materials/vgui/chapters/chapter21.vmt": "af2de491b4b3c5e14da417fd47cca51d19154d2bf0fc274951acaec9c2354f5e",
+        "game-hl2/materials/vgui/chapters/chapter22.vmt": "46edcc7ffd6838512a9c0707bb1dfabe4d3c160e2742efb8d72ca30ade41fffb",
+        "game-hl2/materials/vgui/chapters/chapter23.vmt": "8b48de4f0bd4e4d1ab918bea77a6dab868844e41a80fb824083b170606462b7f",
+        "game-hl2/materials/vgui/chapters/chapter24.vmt": "248e358f81ff6a5b4f3c8823a3a25b521f9a0be5f346e9ea2ddae4f2e5f7295d",
+        "game-hl2/materials/vgui/chapters/chapter25.vmt": "479c049ab411eb3dde7a9f544cade76b914155992975e1ca43960b2c26fda8b0",
+        "game-hl2/materials/vgui/chapters/chapter26.vmt": "82ebb3c01a88ed2d57299108ffa482f237e7c3fee2620cef99655682f8cf627a",
+        "game-hl2/materials/vgui/chapters/chapter27.vmt": "eb9c9ff990f6333755b581988fb38fc3fbf95b2964c055cd09ec59403728a139",
+        "game-hl2/materials/vgui/chapters/chapter3.vmt": "2e20c6c3486562d399f21310138226ce41b9762b89bf39bc46409d94e3bae715",
+        "game-hl2/materials/vgui/chapters/chapter4.vmt": "a71d3fc7a898527663cbf16ab79af81ef2568bbe74e8fd896b6d593a17d24314",
+        "game-hl2/materials/vgui/chapters/chapter5.vmt": "f593f2135c421b4bf76a7293d7c331dcdfcf3e2207d5e4b0f164249908e67728",
+        "game-hl2/materials/vgui/chapters/chapter6.vmt": "da99c5eee5623e31f7bb708103b62b4f510e6ffde7f7fc18c13b4b49cd7f55f3",
+        "game-hl2/materials/vgui/chapters/chapter7.vmt": "0e3336fcd2a5b807f2a4cf2906ac8c6b7da99d533ec8803a55411fa07b663c6f",
+        "game-hl2/materials/vgui/chapters/chapter8.vmt": "838e66fe94273b75f7ac9d39eaca1b9a5842fc2fda4474b41dfba6c311949737",
+        "game-hl2/materials/vgui/chapters/chapter9.vmt": "37d1d543251de8922332cdfea40445cbf0aa180f606c0fd1715f29588293117f",
+        "game-hl2/materials/vgui/chapters/chapter9a.vmt": "65d92dd7070c7100cd363dd4e3970bef7d0972953f234461a048d9d5d2c71bf1",
+        "game-hl2/resource/game-hl2_english.txt": "d2a9d0150ee5cbdf25551d1afdc03fa8798f81b5dc27175599660572af8ef8c9",
+        "game-hl2/resource/HL2EP2.ttf": "79cf3ebbfa1f8e0d5140b2ab237f6ba02c5c9b88b7422ce2069beefe6f9a9194",
+        "game-hl2/scripts/credits.txt": "9ba2a12b6ac2c1438a4ef158384e1bfdd7f077230e0b7ec17b9f458f08f913cd",
+        "game-hl2/scripts/game_sounds_manifest.txt": "dec6f28b554d0845335ac9ca6e5fc16f131c0e3612b80c631e8220282a1cad68",
+        "game-hl2/scripts/hud_textures.txt": "b8e23ece6b4d28c24fc95f9442d7b8bcce0f1ac9f6e3db2128c45884e9b32630",
+        "game-hl2/scripts/HudLayout.res": "9478de3732da9124383d3379408922afa7379ba35243e7b8452b7ec1ca38e163",
+        "game-hl2/scripts/talker/response_rules.txt": "48449c731b920baec62c7057acb521a2dcfb041a83c42001838447cb7a96104f",
+        "game-hl2/shaders/fxc/flashlight_ps20b.vcs": "f1d5f5bd619288535d39516d756adcf7b372a1fca0988a94213caf8b8a27fe7f",
+        "game-hl2/shaders/fxc/lightmappedgeneric_flashlight_vs20.vcs": "f0e0f950bc5acc250e40dde586aa28ba3be173992bbe094572abf4e365fc5387",
+        "halfcraft-0.1.0.jar": "dead982d043c1426ed50483cabd7f3436042d27124795c3960e1c89b2e347211",
+        "LICENSE": "172d24d253aba793d7da35f3eb81e190c4e19e3711c4f183af7d150b86cb16f8"
+      }
+    }
+  },
+  "media": {},
+  "built_by": {
+    "author": "whisky (whiskydumb)",
+    "authors": [
+      "whisky (whiskydumb)",
+      "chasmlol (SkyCraft)"
+    ],
+    "packaged_by": "SIGF"
+  },
+  "idea_by": "whisky (whiskydumb)",
+  "built_at": "2026-10-07T00:00:00.000Z",
+  "status": "beta",
+  "issues": "https://github.com/whiskydumb/halfcraft/issues",
+  "notes": [
+    "You need Half-Life 2 on Steam (Episodes One and Two and Lost Coast come with it) and a Minecraft: Java Edition account; the first Play signs you in through Prism.",
+    "Single player only. HalfCraft runs as its own Source mod folder inside the app: your Half-Life 2 install and saves are not touched, and Restore removes it.",
+    "Built by SIGF from the author's source (no upstream release yet); nobody has played this exact build. Beta: report bugs to the author on the upstream issue tracker."
+  ]
+}
